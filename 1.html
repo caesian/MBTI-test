@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <style>
+
+  </style>
+</head>
+
+<body>
+<h1>MBTI 약식 검사</h1>
+
+1. 무언가를 적극적으로 해야할 때,<br><br>
+<input type="radio" name="a1" value="E">그렇게까지 해야하나보다는 귀찮기 때문인 경우가 많다.<br>
+<input type="radio" name="a1" value="I">귀찮기 때문인 경우보다는 그렇게까지 해야하나 싶기 때문인 경우가 많다.<br><br><br>
+
+2. 나는 어떤 것을 보거나 생각할 때,<br><br>
+<input type="radio" name="a2" value="S">그것 자체에 더 집중하는 편이다.<br>
+<input type="radio" name="a2" value="N">집중보다는 그것과 연관된 다른 것까지 같이 생각하는 편이다.<br><br><br>
+
+3. 상대방이 약간 기분이 안 좋아질 순 있지만 크게 문제가 생기지 않는 경우라면,<br><br>
+<input type="radio" name="a3" value="T">나는 해야하는 말 다 하고 싶다.<br>
+<input type="radio" name="a3" value="F">상대방을 배려해서 정말 필요한 이야기만 하고 싶다.<br><br><br>
+
+4. 큰틀이 있고 계획을 변경하는 게 가능할 때, 그리고 계획을 내가 짜는 것은 아닐 때,<br><br>
+<input type="radio" name="a4" value="J">나는 세부적인 것들도 어느정도 정해져 있으면 좋겠다고 생각한다.<br>
+<input type="radio" name="a4" value="P">굳이 세부적인 것들이 정해져 있는 것보다는 필요할 때 정하는 것이 좋다고 생각한다.<br><br><br>
+
+5. 꼭 내가 따라야하는 참견은 아니다.<br><br>
+<input type="radio" name="a5" value="I">그런 참견은 안 해줬으면 좋겠다.<br>
+<input type="radio" name="a5" value="E">그런 참견도 일단 듣고 싶다.<br><br><br>
+
+6. 추가적인 비용 없이 선택지를 늘릴 수 있다면,<br><br>
+<input type="radio" name="a6" value="N">선택지를 늘리는 것에 흥미가 간다.<br>
+<input type="radio" name="a6" value="S">쓸데없이 복잡해져서 별로 그러고 싶지 않다.<br><br><br>
+
+7. 친구에게 어떤 문제가 있을 때, 위로와 해결책은 둘 다 중요하지만,<br><br>
+<input type="radio" name="a7" value="F">우선 친구가 느꼈을 감정을 떠올리고 위로하는 것에 주력하고 싶다.<br>
+<input type="radio" name="a7" value="T">우선 상황을 파악하고 해결책을 찾는 것에 주력하고 싶다.<br><br><br>
+
+8. 나의 목표에 대한 태도는<br><br>
+<input type="radio" name="a8" value="J">대략적으로라도 목표를 미리 정하고 그것을 틈틈히 의식한다.<br>
+<input type="radio" name="a8" value="P">굳이 세부적인 것들이 정해져 있는 것보다는 필요할 때 정하는 것이 좋다고 생각한다.<br><br><br>
+
+9. 다른 사람과 만나는 게 기빨린다는 표현을 들을 때,<br><br>
+<input type="radio" name="a9" value="I">기빨린다는 표현이 어떤 느낌인지 잘 알 거 같다<br>
+<input type="radio" name="a9" value="E">기빨린다는 표현이 어떤 느낌인지 잘 와닿지 않는다.<br><br><br>
+
+10. 나는 아직 확인할 수 없는 것에 대해<br><br>
+<input type="radio" name="a10" value="N">여러가지 생각을 더 해보는 편이다.<br>
+<input type="radio" name="a10" value="S">굳이 더 생각을 해볼 필요는 없다고 생각한다. <br><br><br>
+
+11. 이럴 때 나는 더 짜증이 난다. <br><br>
+<input type="radio" name="a11" value="F">여러가지 생각해보는 걸 포기하고 감정에 초점을 맞춰야할 때<br>
+<input type="radio" name="a11" value="T">감정을 포기하고 여러가지 생각을 해봐야 할 때<br><br><br>
+
+12. 나는 기본적으로<br><br>
+<input type="radio" name="a12" value="J">나는 뒷일에 대해서 어느정도 구체적으로 이럴 것이다라고 생각하는 편이다. <br>
+<input type="radio" name="a12" value="P">뒷일은 아직 알 수가 없는데 미리 그럴 것이라고 생각하는 것은 섣부르다고 생각하는 편이다.<br><br><br>
+
+<center>
+<button type="button" onclick="result()">확인</button>
+</center>
+
+
+<!-- 아래부터 자바스크립트 -->
+<script type="text/javascript">
+
+var IE = 0
+var SN = 0
+var TF = 0
+var PJ = 0
+
+function result(){
+  var an1 = document.getElementsByName('a1');
+	console.log(an1);
+        for(var i=0; i<an1.length; i++){
+		if(an1[i].checked == true){
+          if(an1[i].value == "E"){IE = IE + 5} else {IE = IE - 5}
+    }
+  }
+  var an2 = document.getElementsByName('a2');
+  console.log(an2);
+        for(var i=0; i<an2.length; i++){
+    if(an2[i].checked == true){
+          if(an2[i].value == "N"){SN = SN + 5} else {SN = SN - 5}
+    }
+  }
+  var an3 = document.getElementsByName('a3');
+  console.log(an3);
+        for(var i=0; i<an3.length; i++){
+    if(an3[i].checked == true){
+          if(an3[i].value == "F"){TF = TF + 5} else {TF = TF - 5}
+    }
+  }
+  var an4 = document.getElementsByName('a4');
+  console.log(an4);
+        for(var i=0; i<an4.length; i++){
+    if(an4[i].checked == true){
+          if(an4[i].value == "J"){PJ = PJ + 5} else {PJ = PJ - 5}
+    }
+  }
+  var an5 = document.getElementsByName('a5');
+	console.log(an5);
+        for(var i=0; i<an5.length; i++){
+		if(an5[i].checked == true){
+          if(an5[i].value == "E"){IE = IE + 5} else {IE = IE - 5}
+    }
+  }
+  var an6 = document.getElementsByName('a6');
+  console.log(an6);
+        for(var i=0; i<an6.length; i++){
+    if(an6[i].checked == true){
+          if(an6[i].value == "N"){SN = SN + 5} else {SN = SN - 5}
+    }
+  }
+  var an7 = document.getElementsByName('a7');
+  console.log(an7);
+        for(var i=0; i<an7.length; i++){
+    if(an7[i].checked == true){
+          if(an7[i].value == "F"){TF = TF + 5} else {TF = TF - 5}
+    }
+  }
+  var an8 = document.getElementsByName('a8');
+  console.log(an8);
+        for(var i=0; i<an8.length; i++){
+    if(an8[i].checked == true){
+          if(an8[i].value == "J"){PJ = PJ + 5} else {PJ = PJ - 5}
+    }
+  }
+  var an9 = document.getElementsByName('a9');
+	console.log(an9);
+        for(var i=0; i<an9.length; i++){
+		if(an9[i].checked == true){
+          if(an9[i].value == "E"){IE = IE + 5} else {IE = IE - 5}
+    }
+  }
+  var an10 = document.getElementsByName('a10');
+  console.log(an10);
+        for(var i=0; i<an10.length; i++){
+    if(an10[i].checked == true){
+          if(an10[i].value == "N"){SN = SN + 5} else {SN = SN - 5}
+    }
+  }
+  var an11 = document.getElementsByName('a11');
+  console.log(an11);
+        for(var i=0; i<an11.length; i++){
+    if(an11[i].checked == true){
+          if(an11[i].value == "F"){TF = TF + 5} else {TF = TF - 5}
+    }
+  }
+  var an12 = document.getElementsByName('a12');
+  console.log(an12);
+        for(var i=0; i<an12.length; i++){
+    if(an12[i].checked == true){
+          if(an12[i].value == "J"){PJ = PJ + 5} else {PJ = PJ - 5}
+    }
+  }
+
+console.log(IE);
+console.log(SN);
+console.log(TF);
+console.log(PJ);
+
+
+if(IE >= 0){IE = "E"} else {IE = "I"}
+if(SN >= 0){SN = "N"} else {SN = "S"}
+if(TF >= 0){TF = "F"} else {TF = "T"}
+if(PJ >= 0){PJ = "J"} else {PJ = "P"}
+alert(IE + SN + TF + PJ);
+}
+
+
+
+function check(){
+var a1 = document.getElementById("answer1").value;
+var a2 = document.getElementById("answer2").value;
+var a3 = document.getElementById("answer3").value;
+var a4 = document.getElementById("answer4").value;
+var a5 = document.getElementById("answer5").value;
+var a6 = document.getElementById("answer6").value;
+var N = 0
+// <답변>
+
+var RA1 = "가"
+var RA2 = "가"
+var RA3 = "가"
+var RA4 = "오"
+var RA5 = "와"
+var RA6 = "오"
+
+
+  if (a1 == RA1) {
+    N = N+1} else {
+      document.getElementById("answer1").value = a1+ " X" + "  /  " + "正解"　+ "  :  " +RA1
+    };
+  if (a2 == RA2) {
+    N = N+1} else {
+      document.getElementById("answer2").value = a2 + " X" + "  /  " + "正解"　+ "  :  " +RA2
+    };
+  if (a3 == RA3) {
+    N = N+1} else {
+      document.getElementById("answer3").value = a3 + " X" + "  /  " + "正解"　+ "  :  " +RA3
+    };
+  if (a4 == RA4) {
+    N = N+1} else {
+      document.getElementById("answer4").value = a4 + " X" + "  /  " + "正解"　+ "  :  " +RA4
+    };
+  if (a5 == RA5) {
+    N = N+1} else {
+      document.getElementById("answer5").value = a5 + " X" + "  /  " + "正解"　+ "  :  " +RA5
+    };
+  if (a6 == RA6) {
+    N = N+1} else {
+      document.getElementById("answer6").value = a6 + " X" + "  /  " + "正解"　+ "  :  " +RA6
+    };
+
+  alert("正解数"+":"+N+"/"+"6")
+}
+</script>
+
+</body>
+<html/>
