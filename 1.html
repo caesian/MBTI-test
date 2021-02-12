@@ -63,7 +63,6 @@
 <button type="button" onclick="result()">확인</button>
 </center>
 
-
 <!-- 아래부터 자바스크립트 -->
 <script type="text/javascript">
 
@@ -164,11 +163,12 @@ console.log(TF);
 console.log(PJ);
 
 
-if(IE >= 0){IE = "E"} else {IE = "I"}
-if(SN >= 0){SN = "N"} else {SN = "S"}
-if(TF >= 0){TF = "F"} else {TF = "T"}
-if(PJ >= 0){PJ = "J"} else {PJ = "P"}
-alert(IE + SN + TF + PJ);
+if(IE >= 0){IE = "e"} else {IE = "i"}
+if(SN >= 0){SN = "n"} else {SN = "s"}
+if(TF >= 0){TF = "f"} else {TF = "t"}
+if(PJ >= 0){PJ = "j"} else {PJ = "p"}
+
+location.href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-"+IE + SN + TF + PJ
 }
 
 
