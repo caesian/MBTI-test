@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <style>
+
+  </style>
+</head>
+
+<body>
+<h1>MBTI 簡単テスト</h1>
+最近自分が実際にしたことじゃなくて, 素直な自分の本音と似ているもの, 近いものを選んでください。<br><br>
+1. やる気について私は <br><br>
+<input type="radio" name="a1" value="E">必要なこと、やりたいことじゃなくてもそれなりにやる気がある方だ。<br>
+<input type="radio" name="a1" value="I">必要なこと、やりたいこと以外にはやる気があまりない方だ。<br><br><br>
+
+2. 私はとあることを見たり考える時、<br><br>
+<input type="radio" name="a2" value="S">それ自体に集中する方だ。<br>
+<input type="radio" name="a2" value="N">それと関係ある、他のことまで一緒に考える方だ。<br><br><br>
+
+3. 先輩が自分がミスをしたことを私のせいにして気分が悪い。私は友達からこういうことを言ってもらいたい。<br><br>
+<input type="radio" name="a3" value="T">その先輩のミスでしょう？ その先輩おかしいな。 - 私の感情よりはその先輩の悪口に共感してくれる友達。<br>
+<input type="radio" name="a3" value="F">その先輩ひどいね。 不愉快だったよね。大丈夫？ - その先輩の悪口より私の感情に共感してくれる友達。<br><br><br>
+
+4. 私は決定をする時、<br><br>
+<input type="radio" name="a4" value="J">いろんなことをを考えながら、大きい問題はないか段階的に検討, 計算をしながら決定をする方だ。<br>
+<input type="radio" name="a4" value="P">いろんなことを考えるよりは、その時の状況に合わせて柔軟で速やかに決定する方だ。<br><br><br>
+
+5. 初対面の人に声をかけることについて私は<br><br>
+<input type="radio" name="a5" value="I">必要なことじゃないとあえてやりたいとは思わない。<br>
+<input type="radio" name="a5" value="E">興味ができたらどうやって声をかけたらいいか考えてみる。<br><br><br>
+
+6. 私はシンプルで明確なものが<br><br>
+<input type="radio" name="a6" value="S">好きな方だ<br>
+<input type="radio" name="a6" value="N">若干退屈だと感じて、もっと意味を考えてみるのが好きな方だ。<br><br><br>
+
+7. 友達に何か問題があった時、共感と解決方法は両方重要だけど、<br><br>
+<input type="radio" name="a7" value="F">状況の中で友達が感じた感情を考えて、共感することがもっと重要だと思う。<br>
+<input type="radio" name="a7" value="T">状況を把握して解決方法や結論を一緒に考えてみることがもっと重要だと思う。<br><br><br>
+
+8. 私は目標が決まった後、<br><br>
+<input type="radio" name="a8" value="J">必要なことと状況展開の順番について考えてみたり、ある程度計算をやった後、自分の頭にまとめておく方だ。<br>
+<input type="radio" name="a8" value="P">おおよそのことだけ決まっておいて、その時の状況に合わせて柔軟に判断する方だ。<br><br><br>
+
+9. 対話をする時、すごく話す時もあって、あまり話さない時もあるけど<br><br>
+<input type="radio" name="a9" value="I">大体、私は喋るのが多い方ではない。<br>
+<input type="radio" name="a9" value="E">大体、私は喋るのが多い方だ。<br><br><br>
+
+10. 周りで誰かが確かではない可能性について話す時、<br><br>
+<input type="radio" name="a10" value="N">私は自然に興味ができる場合が多い。<br>
+<input type="radio" name="a10" value="S">確かではない可能性については元々あまり聞きたくない。<br><br><br>
+
+11. 友達を喧嘩をした後、こういう時にもっとイラッとする。 <br><br>
+<input type="radio" name="a11" value="T">理由について考えることを後にして、もっと感情について考えないといけない時。<br>
+<input type="radio" name="a11" value="F">感情を後にして、もっと理由について考えないといけない時。<br><br><br>
+
+12. 私は基本的に<br><br>
+<input type="radio" name="a12" value="J">後のことについてある程度具体的にこうだろうと予想してみる方だ。<br>
+<input type="radio" name="a12" value="P">後のことはまだ分からないのに先にそうだろうと思うのは微妙だと思う方だ。<br><br><br>
+
+<center>
+<button type="button" onclick="result()">確認</button>
+</center>
+
+<!-- 아래부터 자바스크립트 -->
+<script type="text/javascript">
+
+var IE = 0
+var SN = 0
+var TF = 0
+var PJ = 0
+
+function result(){
+  var an1 = document.getElementsByName('a1');
+	console.log(an1);
+        for(var i=0; i<an1.length; i++){
+		if(an1[i].checked == true){
+          if(an1[i].value == "E"){IE = IE + 5} else {IE = IE - 5}
+    }
+  }
+  var an2 = document.getElementsByName('a2');
+  console.log(an2);
+        for(var i=0; i<an2.length; i++){
+    if(an2[i].checked == true){
+          if(an2[i].value == "N"){SN = SN + 5} else {SN = SN - 5}
+    }
+  }
+  var an3 = document.getElementsByName('a3');
+  console.log(an3);
+        for(var i=0; i<an3.length; i++){
+    if(an3[i].checked == true){
+          if(an3[i].value == "F"){TF = TF + 5} else {TF = TF - 5}
+    }
+  }
+  var an4 = document.getElementsByName('a4');
+  console.log(an4);
+        for(var i=0; i<an4.length; i++){
+    if(an4[i].checked == true){
+          if(an4[i].value == "J"){PJ = PJ + 5} else {PJ = PJ - 5}
+    }
+  }
+  var an5 = document.getElementsByName('a5');
+	console.log(an5);
+        for(var i=0; i<an5.length; i++){
+		if(an5[i].checked == true){
+          if(an5[i].value == "E"){IE = IE + 5} else {IE = IE - 5}
+    }
+  }
+  var an6 = document.getElementsByName('a6');
+  console.log(an6);
+        for(var i=0; i<an6.length; i++){
+    if(an6[i].checked == true){
+          if(an6[i].value == "N"){SN = SN + 5} else {SN = SN - 5}
+    }
+  }
+  var an7 = document.getElementsByName('a7');
+  console.log(an7);
+        for(var i=0; i<an7.length; i++){
+    if(an7[i].checked == true){
+          if(an7[i].value == "F"){TF = TF + 5} else {TF = TF - 5}
+    }
+  }
+  var an8 = document.getElementsByName('a8');
+  console.log(an8);
+        for(var i=0; i<an8.length; i++){
+    if(an8[i].checked == true){
+          if(an8[i].value == "J"){PJ = PJ + 5} else {PJ = PJ - 5}
+    }
+  }
+  var an9 = document.getElementsByName('a9');
+	console.log(an9);
+        for(var i=0; i<an9.length; i++){
+		if(an9[i].checked == true){
+          if(an9[i].value == "E"){IE = IE + 5} else {IE = IE - 5}
+    }
+  }
+  var an10 = document.getElementsByName('a10');
+  console.log(an10);
+        for(var i=0; i<an10.length; i++){
+    if(an10[i].checked == true){
+          if(an10[i].value == "N"){SN = SN + 5} else {SN = SN - 5}
+    }
+  }
+  var an11 = document.getElementsByName('a11');
+  console.log(an11);
+        for(var i=0; i<an11.length; i++){
+    if(an11[i].checked == true){
+          if(an11[i].value == "F"){TF = TF + 5} else {TF = TF - 5}
+    }
+  }
+  var an12 = document.getElementsByName('a12');
+  console.log(an12);
+        for(var i=0; i<an12.length; i++){
+    if(an12[i].checked == true){
+          if(an12[i].value == "J"){PJ = PJ + 5} else {PJ = PJ - 5}
+    }
+  }
+
+console.log(IE);
+console.log(SN);
+console.log(TF);
+console.log(PJ);
+
+
+if(IE >= 0){IE = "E"} else {IE = "I"}
+if(SN >= 0){SN = "N"} else {SN = "S"}
+if(TF >= 0){TF = "F"} else {TF = "T"}
+if(PJ >= 0){PJ = "J"} else {PJ = "P"}
+
+location.href="https://www.16personalities.com/ja/"+IE + SN + TF + PJ+"%E5%9E%8B%E3%81%AE%E6%80%A7%E6%A0%BC"
+}
+
+
+</script>
+
+</body>
+<html/>
